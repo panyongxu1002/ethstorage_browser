@@ -21,6 +21,9 @@ let AppController = class AppController {
     constructor(appService) {
         this.appService = appService;
     }
+    getHello() {
+        return this.appService.getHello();
+    }
     async getTxListByAddress(txListDto) {
         return await this.appService.getTxListByAddress(txListDto);
     }
@@ -32,6 +35,13 @@ let AppController = class AppController {
     }
 };
 exports.AppController = AppController;
+__decorate([
+    (0, common_1.Get)(),
+    (0, swagger_1.ApiOperation)({ summary: '测试' }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", String)
+], AppController.prototype, "getHello", null);
 __decorate([
     (0, common_1.Get)('txlist'),
     (0, swagger_1.ApiOperation)({ summary: '通过合约地址来获取它的交易列表' }),

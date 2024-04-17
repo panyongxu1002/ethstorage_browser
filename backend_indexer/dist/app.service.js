@@ -19,7 +19,7 @@ let AppService = class AppService {
         this.httpService = httpService;
     }
     getHello() {
-        return 'Hello World ?!';
+        return 'Hello World';
     }
     get NetworkBaseUrl() {
         const NetworkBaseUrl = this.configService.get('NetworkBaseUrl');

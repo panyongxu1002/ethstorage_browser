@@ -13,6 +13,12 @@ import { TxListDto, TransactionByHash, TransactionByHashDesc } from './dto/Dto';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
+  @Get()
+  @ApiOperation({ summary: '测试' })
+  getHello(): string {
+    return this.appService.getHello();
+  }
+
   @Get('txlist')
   @ApiOperation({ summary: '通过合约地址来获取它的交易列表' })
   async getTxListByAddress(@Query() txListDto: TxListDto): Promise<any> {

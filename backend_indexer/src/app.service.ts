@@ -11,7 +11,7 @@ export class AppService {
     private readonly httpService: HttpService,
   ) {}
   getHello(): string {
-    return 'Hello World ?!';
+    return 'Hello World';
   }
 
   get NetworkBaseUrl() {
