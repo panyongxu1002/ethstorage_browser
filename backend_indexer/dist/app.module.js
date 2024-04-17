@@ -13,6 +13,8 @@ const app_service_1 = require("./app.service");
 const config_1 = require("@nestjs/config");
 const config_2 = require("./config");
 const axios_1 = require("@nestjs/axios");
+const serve_static_1 = require("@nestjs/serve-static");
+const path_1 = require("path");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -23,6 +25,10 @@ exports.AppModule = AppModule = __decorate([
                 load: [config_2.default],
             }),
             axios_1.HttpModule,
+            serve_static_1.ServeStaticModule.forRoot({
+                rootPath: (0, path_1.join)(__dirname, '..', 'swagger-static'),
+                serveRoot: process.env.NODE_ENV === 'development' ? '/' : '/api-docs',
+            }),
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
